@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Static for Mac</title>
+<link rel="icon" href="../logo.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="./"><img src="../logo.png" alt="">Static</a>
+  <div class="links"><a href="../">Home</a><a href="https://github.com/codelinkd203/Static">GitHub</a></div>
+</nav>
+<main>
+  <section class="dl">
+    <img src="../logo.png" alt="" width="80" height="80" style="border-radius:18px">
+    <h1 style="font-size:clamp(34px,5vw,52px)">Download Static</h1>
+    <p class="sub" style="margin-bottom:0">Which Mac do you have? <span id="ver"></span></p>
+  </section>
+  <div class="pick">
+    <button type="button" data-file="Static.arm64.dmg">
+      <div class="ico">&#63743;</div><h3>Apple silicon</h3><p>M1, M2, M3, M4 and later</p><span class="file">Static.arm64.dmg</span>
+    </button>
+    <button type="button" data-file="Static.x64.dmg">
+      <div class="ico">&#128187;</div><h3>Intel</h3><p>Macs with an Intel processor</p><span class="file">Static.x64.dmg</span>
+    </button>
+  </div>
+  <p id="msg" aria-live="polite"></p>
+  <p class="help">Not sure? Click the Apple menu, then <b>About This Mac</b>. If it says <b>Chip</b>, pick Apple silicon. If it says <b>Processor</b>, pick Intel.</p>
+</main>
+<footer>Static © codelinkd203 <span id="y"></span> · <a href="https://github.com/codelinkd203/Static/releases">All releases</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var REPO='https://github.com/codelinkd203/Static';
+var verEl=document.getElementById('ver'),msg=document.getElementById('msg');
+// Fetch the current version from package.json on main, via jsDelivr.
+var versionP=fetch('https://cdn.jsdelivr.net/gh/codelinkd203/Static@main/package.json')
+  .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+  .then(function(p){return String(p.version).replace(/^v/,'')});
+versionP.then(function(v){verEl.textContent='Latest version: '+v}).catch(function(){});
+document.querySelectorAll('.pick button').forEach(function(b){
+  b.addEventListener('click',function(){
+    msg.textContent='Getting the latest version…';
+    versionP.then(function(v){
+      msg.textContent='Starting your download…';
+      // Release tags look like v3.0.0, while package.json says 3.0.0
+      location.href=REPO+'/releases/download/v'+v+'/'+b.dataset.file;
+    }).catch(function(){
+      msg.textContent='Couldn\u2019t check the version, taking you to the releases page…';
+      location.href=REPO+'/releases/latest';
+    });
+  });
+});
+</script>
+</body>
+</html>

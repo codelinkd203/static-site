@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Static — Instant Local Web Preview for Mac</title>
+<meta name="description" content="Drop a folder, preview your website. Static is a native-feeling macOS app for previewing local sites.">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="./"><img src="logo.png" alt="">Static</a>
+  <div class="links">
+    <a href="#features">Features</a>
+    <a href="https://github.com/codelinkd203/Static">GitHub</a>
+    <a class="btn sm" href="download/">Download</a>
+  </div>
+</nav>
+<main>
+  <section class="hero">
+    <img class="logo" src="logo.png" alt="Static app icon">
+    <h1>Drop a folder.<br>Preview your site.</h1>
+    <p class="sub">Static is a lightweight Mac app for previewing local websites. No servers to start, no ports to remember.</p>
+    <div class="cta">
+      <a class="btn" href="download/">Download for Mac</a>
+      <a class="btn ghost" href="#features">See what it does ›</a>
+    </div>
+    <p class="note">Free · macOS · Apple silicon &amp; Intel</p>
+    <div class="win hero-shot"><div class="bar"><i></i><i></i><i></i></div>
+      <div class="shot" data-name="preview.png"><img src="screenshots/preview.png" alt="Static previewing a local website" onerror="this.parentNode.classList.add('missing')"></div></div>
+  </section>
+
+  <section id="features">
+    <h2>Local previews, minus the setup.</h2>
+    <p class="lead">Everything lives in one clean, Quick Look-style window.</p>
+
+    <div class="row">
+      <div class="txt"><h3>Just drop it in.</h3><p>Drag any website folder onto Static, or hit Browse. Your site opens instantly, with no config files and no project setup.</p></div>
+      <div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="shot" data-name="launcher.png"><img src="screenshots/launcher.png" alt="Static launcher with a drop zone" onerror="this.parentNode.classList.add('missing')"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="txt"><h3>DevTools when you need them.</h3><p>Inspect and debug right from the toolbar. A live error counter tells you when something breaks, and reload is one click away.</p></div>
+      <div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="shot" data-name="devtools.png"><img src="screenshots/devtools.png" alt="Static with DevTools open and an error badge" onerror="this.parentNode.classList.add('missing')"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="txt"><h3>Made for the terminal, too.</h3><p>Run <code>static .</code> in any folder to open it straight away, or <code>static ~/Projects/my-site</code> from anywhere.</p></div>
+      <div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="shot" data-name="terminal.png"><img src="screenshots/terminal.png" alt="Opening a folder with the static command" onerror="this.parentNode.classList.add('missing')"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="txt"><h3>Your browser, your choice.</h3><p>Static detects the browsers installed on your Mac and adds one-click shortcuts to open your project in any of them. Auto-reload and notices are in Settings.</p></div>
+      <div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="shot" data-name="settings.png"><img src="screenshots/settings.png" alt="Static settings window" onerror="this.parentNode.classList.add('missing')"></div></div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><b>Native feel</b><span>Translucent windows, smooth animations, familiar controls.</span></div>
+      <div class="card"><b>Multiple projects</b><span>Switch between previews quickly.</span></div>
+      <div class="card"><b>Zero config</b><span>Works with any existing website folder.</span></div>
+      <div class="card"><b>Open source</b><span>MIT licensed, with the code on GitHub.</span></div>
+    </div>
+  </section>
+
+  <section class="bottom">
+    <h2 style="margin-top:40px">Ready when you are.</h2>
+    <p class="lead">Grab Static and preview your first folder in seconds.</p>
+    <a class="btn" href="download/">Download for Mac</a>
+  </section>
+</main>
+<footer>Static © codelinkd203 <span id="y"></span> · <a href="https://github.com/codelinkd203/Static">GitHub</a> · <a href="https://github.com/codelinkd203/Static/issues">Feedback</a></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
