@@ -35,7 +35,7 @@ document.getElementById('y').textContent=new Date().getFullYear();
 var REPO='https://github.com/codelinkd203/Static';
 var verEl=document.getElementById('ver'),msg=document.getElementById('msg');
 // Fetch the current version from package.json on main, via jsDelivr.
-var versionP=fetch('https://cdn.jsdelivr.net/gh/codelinkd203/Static@main/package.json')
+var versionP=fetch('https://raw.githubusercontent.com/codelinkd203/Static/refs/heads/main/package.json')
   .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
   .then(function(p){return String(p.version).replace(/^v/,'')});
 versionP.then(function(v){verEl.textContent='Latest version: '+v}).catch(function(){});
